@@ -8,8 +8,8 @@ class MyHomePage extends StatelessWidget {
   final String kelas = "KKI"; // Class
 
   final List<ItemHomepage> items = [
-    ItemHomepage("See Football News", Icons.newspaper),
-    ItemHomepage("Add News", Icons.add),
+    ItemHomepage("See Live to Kick", Icons.newspaper),
+    ItemHomepage("Add Product", Icons.add),
     ItemHomepage("Logout", Icons.logout),
   ];
 
@@ -20,9 +20,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       // AppBar adalah bagian atas halaman yang menampilkan judul.
       appBar: AppBar(
-        // Judul aplikasi "Football News" dengan teks putih dan tebal.
+        // Judul aplikasi "Live to Kick" dengan teks putih dan tebal.
         title: const Text(
-          'Football News',
+          'Live to Kick',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
                     child: Text(
-                      'Selamat datang di Football News',
+                      'Selamat datang di Live to Kick',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
