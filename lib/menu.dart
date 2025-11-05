@@ -8,9 +8,9 @@ class MyHomePage extends StatelessWidget {
   final String kelas = "KKI"; // Class
 
   final List<ItemHomepage> items = [
-    ItemHomepage("See Live to Kick", Icons.newspaper),
-    ItemHomepage("Add Product", Icons.add),
-    ItemHomepage("Logout", Icons.logout),
+    ItemHomepage("All Product", Icons.newspaper, Colors.blue),
+    ItemHomepage("My Product", Icons.newspaper, Colors.green),
+    ItemHomepage("Create Product", Icons.add, Colors.red),
   ];
 
 
@@ -131,7 +131,7 @@ class ItemHomepage {
   final String name;
   final IconData icon;
 
-  ItemHomepage(this.name, this.icon);
+  ItemHomepage(this.name, this.icon, this.color);
 }
 
 class ItemCard extends StatelessWidget {
@@ -156,7 +156,7 @@ class ItemCard extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-                SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
+                SnackBar(content: Text("You have pressed the ${item.name} button"))
             );
         },
         // Container untuk menyimpan Icon dan Text
