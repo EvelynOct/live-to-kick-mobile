@@ -5,7 +5,7 @@ In Flutter, the widget tree is a structure that represents the entire user inter
 > Branches: Layout widgets like Column, Row, or Padding.
 > Leaves: Simple, atomic widgets like Text, Icon, or Image.
 
-Parent-Child Relationships:
+Parent-Child Relationships: \n
 Every widget in the UI is either a parent or a child (or both). A Parent Widget is a container or structural element that takes one or more widgets as its children. Examples: Scaffold, Column, Row. Meanwhile, a Child Widget is contained within a parent. A widget's build method is responsible for returning the next widget in the tree, so the widget returned by a parent's build method is its child, and so on. This hierarchy determines the layout, styling, and interactivity of the entire UI.
 2. List all the widgets you used in this project and explain their functions.
 3. What is the function of the MaterialApp widget? Explain why this widget is often used as the root widget.
