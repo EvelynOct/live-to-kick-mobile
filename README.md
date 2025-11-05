@@ -3,7 +3,9 @@
 
 In Flutter, the widget tree is a structure that represents the entire user interface (UI) of the application. Every visible and invisible component (buttons, text, layout containers, etc.) is a widget, and they are arranged in a hierarchical structure, similar to a family tree. The tree are made of:
 > Root: The top-level widget (usually MaterialApp or CupertinoApp).
+> 
 > Branches: Layout widgets like Column, Row, or Padding.
+> 
 > Leaves: Simple, atomic widgets like Text, Icon, or Image.
 
 Parent-Child Relationships:
@@ -13,29 +15,48 @@ Every widget in the UI is either a parent or a child (or both). A Parent Widget 
 2. List all the widgets you used in this project and explain their functions.
 
 > MyApp	(main.dart).	Function: Root Widget. Defines the starting point of the application.
+> 
 > MaterialApp	(main.dart).	Function: Framework Setup. Provides the necessary features for Material Design (themes, navigation, etc.).
+> 
 > ThemeData	(main.dart).	Function: Styling. Defines the visual properties (colors, fonts, etc.) for the entire app.
+> 
 > MyHomePage	(menu.dart).	Function: Page Structure. Represents the main screen/page of your application.
+> 
 > Scaffold	(menu.dart).	Function: Layout Structure. Implements the basic structure of a screen, providing slots for AppBar, body, and potentially a drawer.
+> 
 > AppBar	(menu.dart).	Function: Top Navigation/Header. Displays the title and common action buttons at the top of the screen.
+> 
 > Padding	(menu.dart).	Function: Spacing. Applies consistent space/padding around a single child widget.
+> 
 > Column	(menu.dart).	Function: Vertical Layout. Arranges its list of children widgets vertically.
+> 
 > Row	(menu.dart).	Function: Horizontal Layout. Arranges its list of children widgets horizontally.
+> 
 > SizedBox	(menu.dart).	Function: Fixed Space. Creates an empty box of a specific size, often used for adding vertical or horizontal spacing.
+> 
 > Center	(menu.dart).	Function: Alignment. Centers its single child widget within the parent.
+> 
 > Text	(main.dart and menu.dart).	Function: Text Display. Displays a string of text on the screen.
+> 
 > GridView.count	(menu.dart).	Function: Grid Layout. Displays its children in a two-dimensional scrollable array with a fixed number of columns (crossAxisCount).
+> 
 > Card	(menu.dart) (in InfoCard)	Function: Styling/Elevation. A container with slightly rounded corners and a shadow (elevation) to give a lifted, material look.
+> 
 > Material	(menu.dart) (in ItemCard)	Function: Visual Properties. Provides material properties like background color and borderRadius before adding interactivity.
+> 
 > InkWell	(menu.dart) (in ItemCard)	Function: Tappable Area. Makes its child widget respond to touch/tap events (onTap) and provides the famous ripple effect.
+> 
 > Icon	(menu.dart)	Icon Display. Function: Displays a graphical symbol from the Material Icons library.
 
 3. What is the function of the MaterialApp widget? Explain why this widget is often used as the root widget.
 
 Function:
 > It brings in the necessary components and structure to create a consistent, Material Design-compliant application.
+> 
 > It defines the theme data (like primary colors, fonts, and overall styling) that all subsequent widgets will inherit.
+> 
 > It sets up the system for navigating between different screens using named routes (/home, /settings, etc.).
+> 
 > It manages global settings like locale, text direction, and displays the debug banner.
 
 Why it's the Root Widget:
