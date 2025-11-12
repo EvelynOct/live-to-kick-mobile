@@ -108,3 +108,40 @@ Hot restart:
 > Code Structure/App Logic Changes. Used when you modify void main(), change a global variable, modify a StatefulWidget's State class, or change native platform code.
 
 So basically, we use Hot Reload for rapid UI iteration. Meanwhile we use Hot Restart when Hot Reload fails to reflect a deep structural change or you need to reset the app's state entirely.
+
+
+
+## Assignment 8
+
+1. Explain the difference between Navigator.push() and Navigator.pushReplacement() in Flutter. In what context of your application is each best used?
+   
+> Navigator.push() is used to add a new page onto the navigation stack, allowing the user to return to the previous page using the back button. It is used for navigation where users might want to go back (like opening a product details page).
+> Navigator.pushReplacement() replaces the current page with a new one, removing the previous page from the stack. It is used for one-way navigation, like moving from a login page to the home page after successful authentication.
+
+2. How do you use hierarchy widget like Scaffold, AppBar, dan Drawer to build a consistent page structure in the your application?
+
+> **`Scaffold`:** This is the foundational widget for a single page. It provides the slots for the main structural components, ensuring every page has a standard layout canvas.
+> **`AppBar`:** Placed in the `appBar` slot of the `Scaffold`, it provides consistent elements like the screen **Title**, the automatic **Back Button** (leading), and action icons (like the **Shopping Cart**).
+> **`Drawer`:** Placed in the `drawer` slot of the `Scaffold`, it is used for global, secondary navigation links (e.g., **My Orders**, **Settings**). Using it keeps the main screen clean while providing uniform access to other major sections of the app.
+
+```dart
+// Example of a consistent page structure
+Scaffold(
+  appBar: AppBar(
+    title: const Text('Live to Kick'), // Consistent title and branding
+    // ... actions
+  ),
+  drawer: Drawer( // Consistent global navigation panel
+    child: ListView(
+      // ... navigation links
+    ),
+  ),
+  body: Center(
+    child: Text('Main Page Content'),
+  ),
+);
+```
+
+3. In the context of user interface design, what do you think is the advantages of using layout widget like Padding, SingleChildScrollView, and ListView when displaying form elements? Provide usage examples from your application.
+
+4. How do you set the color theme so that your Football Shop have a visual identity that is consistent with the shop brand.
