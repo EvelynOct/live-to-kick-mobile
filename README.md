@@ -121,7 +121,9 @@ So basically, we use Hot Reload for rapid UI iteration. Meanwhile we use Hot Res
 2. How do you use hierarchy widget like Scaffold, AppBar, dan Drawer to build a consistent page structure in the your application?
 
 > **`Scaffold`:** This is the foundational widget for a single page. It provides the slots for the main structural components, ensuring every page has a standard layout canvas.
+> 
 > **`AppBar`:** Placed in the `appBar` slot of the `Scaffold`, it provides consistent elements like the screen **Title**, the automatic **Back Button** (leading), and action icons (like the **Shopping Cart**).
+> 
 > **`Drawer`:** Placed in the `drawer` slot of the `Scaffold`, it is used for global, secondary navigation links (e.g., **My Orders**, **Settings**). Using it keeps the main screen clean while providing uniform access to other major sections of the app.
 
 ```dart
@@ -143,5 +145,66 @@ Scaffold(
 ```
 
 3. In the context of user interface design, what do you think is the advantages of using layout widget like Padding, SingleChildScrollView, and ListView when displaying form elements? Provide usage examples from your application.
+> These layout widgets are crucial for creating a responsive, clean, and user-friendly experience, especially in forms. Their main advantages are preventing UI errors and improving readability:
+> 
+> Padding (Visual Separation)	Adds "breathing room" around form fields. This prevents them from feeling cramped, improves readability, and makes each field an easier and more obvious tap target.
+> 
+> SingleChildScrollView	(Prevents Pixel Overflow) Wraps the form, making it scrollable. This is essential for forms, as it prevents the "bottom overflow" error when the keyboard appears and covers the bottom half of the screen.
+> 
+> ListView (Efficient Scrolling Structure) Acts like a Column and SingleChildScrollView combined. It's excellent for long forms or dynamic forms where fields might be added or removed, as it handles scrolling efficiently.
+>
+> Example Padding and ListView:
+```dart
+child: ListView(
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Live to Kick',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(10)),
+                Text(
+                  "All the latest football updates here!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
+            ),
+          ),
+```
+> Example SingleChildScrollView:
+```dart
+child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // === Name ===
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    hintText: "Product Name",
+                    labelText: "Product Name",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
+```
 
 4. How do you set the color theme so that your Football Shop have a visual identity that is consistent with the shop brand.
+> You achieve a consistent visual identity by defining a global ThemeData object and passing it to the theme property of the root MaterialApp widget. This ensures that all widgets in the application (like AppBar, ElevatedButton, FloatingActionButton, etc.) automatically inherit the brand's colors and styles. We can set the colorScheme or older properties like primaryColor and accentColor. For my website it has backgroundColor: Theme.of(context).colorScheme.primary, but each of the button colors is different to match Assignment 7.
